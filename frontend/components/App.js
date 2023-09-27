@@ -15,6 +15,10 @@ export default class App extends React.Component {
     this.setState({ ...this.state, todoNameInput: value });
   };
 
+  resetForm = () => {
+    this.setState({ ...this.state, todoNameInput: "" });
+  };
+
   postNewTodo = () => {
     axios
       .post(URL, { name: this.state.todoNameInput })
